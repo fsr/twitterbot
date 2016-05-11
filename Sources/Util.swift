@@ -32,3 +32,10 @@ extension NSURLSession {
         return (data, response, error)
     }
 }
+
+extension String {
+    func toBase64() -> String {
+        let data = dataUsingEncoding(NSUTF8StringEncoding)
+        return data!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+    }
+}
